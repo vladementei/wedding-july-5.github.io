@@ -1,2 +1,6 @@
-<document><body>Testing</body></document>
-<script>console.log("TEST")</script>
+<document><body><div id="guestGreeting">Testing</div></body></document>
+<script>
+  const guestId = +new URLSearchParams(window.location.search).get("guest");
+  const guestELement = document.getElementById("guestGreeting")
+  guestELement.innerText = guestId.toString()
+</script>
