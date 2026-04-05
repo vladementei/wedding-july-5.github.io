@@ -1,6 +1,68 @@
-<document><body><div id="guestGreeting">Testing</div></body></document>
+<document><body><div id="guestGreeting">Гость не найден</div></body></document>
 <script>
-  const guestId = +new URLSearchParams(window.location.search).get("guest");
+  const guests = [{
+    "name": "Дорогие Оксана и Яков",
+    "qrLink": "qr21.png",
+    "uuid": "66ffc662-f770-4b53-aa4c-65a6b699b44f"
+  }, {
+    "name": "Дорогая Мария",
+    "qrLink": "qr21.png",
+    "uuid": "509ebd0e-e2ea-42c7-a8d0-93740c3bee3c"
+  }, {
+    "name": "Дорогие Елена и Евгений",
+    "qrLink": "qr21.png",
+    "uuid": "4c532d5d-981c-424c-968f-cdd017a305b8"
+  }, {
+    "name": "Дорогая Евгения Максимовна",
+    "qrLink": "qr21.png",
+    "uuid": "1d117f59-ce9c-431b-ae98-a83c6eeb5cb7"
+  }, {
+    "name": "Дорогая Ольга Яковлевна",
+    "qrLink": "qr21.png",
+    "uuid": "4b721a96-d158-4883-b1ca-0cd280e7456b"
+  }, {
+    "name": "Дорогие Екатерина Андреевна и Владимир Владимирович",
+    "qrLink": "qr21.png",
+    "uuid": "7dd7709b-7425-4cb9-ab1d-9150eb2e6aa0"
+  }, {
+    "name": "Дорогие Эдуард и Татьяна",
+    "qrLink": "qr21.png",
+    "uuid": "52e23328-9597-4b34-a69b-1128d9d5ccfc"
+  }, {
+    "name": "Дорогие Никита и Катя",
+    "qrLink": "qr21.png",
+    "uuid": "b43cab6c-ae2a-47ab-bca5-74076d7da706"
+  }, {
+    "name": "Дорогие Марина, Сергей, Лиза, Вова и Саша",
+    "qrLink": "qr21.png",
+    "uuid": "abfbb209-7ad1-4656-9aa6-b8b9bb36169f"
+  }, {
+    "name": "Дорогой Тима",
+    "qrLink": "qr21.png",
+    "uuid": "6d339eb1-80ad-422a-af97-c8b6aaf419fb"
+  }, {
+    "name": "Дорогие Николай и Ольга",
+    "qrLink": "qr21.png",
+    "uuid": "1e28cb2c-0fd5-40a6-a3f3-f3631305aa22"
+  }, {
+    "name": "Дорогие Алеся и Андрей",
+    "qrLink": "qr21.png",
+    "uuid": "efd022fe-c7a0-4fce-97b3-8a07ecbef014"
+  }, {
+    "name": "Дорогая Арина",
+    "qrLink": "qr21.png",
+    "uuid": "fbd5c1f3-950c-434f-8a10-301c1d22481f"
+  }, {
+    "name": "Дорогой Иван",
+    "qrLink": "qr21.png",
+    "uuid": "6823c70c-164e-434d-b168-1e1dbf74b820"
+  },
+    {"name": "Дорогие Мария, Лолита и Марк", "qrLink": "qr21.png", "uuid": "c2c550e5-8616-4634-af7f-a0223b710b92"}
+  ]
+  const guestId = new URLSearchParams(window.location.search).get("guest");
   const guestELement = document.getElementById("guestGreeting")
-  guestELement.innerText = guestId.toString()
+  const guestDetails = guests.find(it => it.uuid === guestId);
+  if (guestDetails) {
+    guestELement.innerText = guestDetails.name
+  }
 </script>
