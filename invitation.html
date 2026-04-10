@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ru" class="_final">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+  <title>Save the Date — Маша и Влад</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Marck+Script&family=Caveat:wght@400;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 148mm;
+      height: 210mm;
+    }
+
+    html._final {
+      transform: scaleX(0.781) scaleY(0.77) translate(100px, -180px) rotate(90deg);
+      transform: scaleX(0.781) scaleY(0.77) translate(42px, -232.5px) rotate(90deg);
+      transform: scaleX(0.77) scaleY(0.781) translate(-80.8px, -108px) rotate(0deg);
+      transform: scaleX(0.77) scaleY(0.781) translate(-83.4px, -111.2px) rotate(0deg);
+      /*background-color: red;*/
+    }
+
+    ._final body {
+      display: ruby-text;
+    }
+
+    body {
+      /*background: #d6d0c8;*/
+    }
+
+    @media print {
+      @page {
+        /* width height */
+        /*size: 165.6mm 115.5mm;*/
+        /*size: 115mm 165.5mm ;*/
+        size: 114mm 164mm ;
+        margin: 0; /* Optional: removes default browser margins */
+        padding: 0;
+        border: none;
+      }
+    }
+
+    /* ─── PAGE / CARD ───────────────────────────────────── */
+    .page {
+      width: 148mm;
+      height: 210mm;
+      position: relative;
+      overflow: hidden;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+
+      /* Nearly white paper with a few localized paper folds */
+      /*background-color: #ffffff;*/
+      /*background-image:*/
+      /*  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1400'%3E%3Cdefs%3E%3ClinearGradient id='paper' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23ffffff'/%3E%3Cstop offset='62%25' stop-color='%23fffefe'/%3E%3Cstop offset='100%25' stop-color='%23fbfaf8'/%3E%3C/linearGradient%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Cfilter id='blur'%3E%3CfeGaussianBlur stdDeviation='2.1'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='1000' height='1400' fill='url(%23paper)'/%3E%3Crect width='1000' height='1400' filter='url(%23grain)' opacity='0.014'/%3E%3Cellipse cx='92' cy='270' rx='34' ry='208' fill='%23cfc7be' opacity='0.10' filter='url(%23blur)'/%3E%3Cpath d='M88 56 C118 150 122 278 100 478' fill='none' stroke='%23bcb5ad' stroke-width='5.5' stroke-linecap='round' opacity='0.46'/%3E%3Cpath d='M95 62 C122 156 125 280 106 474' fill='none' stroke='%23ffffff' stroke-width='1.6' stroke-linecap='round' opacity='0.9'/%3E%3Cellipse cx='858' cy='178' rx='48' ry='182' transform='rotate(18 858 178)' fill='%23d3cbc2' opacity='0.08' filter='url(%23blur)'/%3E%3Cpath d='M812 34 C842 118 853 214 832 378' fill='none' stroke='%23c0b8af' stroke-width='5' stroke-linecap='round' opacity='0.4'/%3E%3Cpath d='M820 38 C848 121 858 214 839 372' fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' opacity='0.86'/%3E%3Cellipse cx='170' cy='1180' rx='132' ry='42' transform='rotate(-12 170 1180)' fill='%23d0c8bf' opacity='0.08' filter='url(%23blur)'/%3E%3Cpath d='M34 1214 C118 1172 228 1152 338 1176' fill='none' stroke='%23c4bdb4' stroke-width='4.8' stroke-linecap='round' opacity='0.34'/%3E%3Cpath d='M40 1220 C121 1182 228 1163 332 1184' fill='none' stroke='%23ffffff' stroke-width='1.4' stroke-linecap='round' opacity='0.78'/%3E%3C/svg%3E"),*/
+      /*  radial-gradient(ellipse 95% 72% at 50% 34%, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.04) 48%, transparent 72%),*/
+      /*  radial-gradient(ellipse 28% 24% at 91% 91%, rgba(255,255,255,0.46) 0%, rgba(255,255,255,0.04) 42%, transparent 70%);*/
+      /*background-size: cover;*/
+      /*box-shadow: inset 0 0 0.6mm rgba(255,255,255,0.35);*/
+      background-image: url("back-2.jpg");
+      background-position: right;
+      /*margin-right: 30px;*/
+      /*outline: 2px solid black;*/
+    }
+
+    /* no extra global crease network */
+    .page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background: none;
+    }
+
+    /* ─── CONTENT ───────────────────────────────────────── */
+    .content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ─── GREETING ──────────────────────────────────────── */
+    .greeting {
+      position: absolute;
+      top: 10mm;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4.1mm;
+      font-weight: 400;
+      color: #1a1a1a;
+      letter-spacing: 0.12mm;
+
+      display: flex;
+      flex-direction: column;
+    }
+    .greeting strong { font-weight: 700; }
+
+    /* ─── PHOTOS BLOCK ──────────────────────────────────── */
+    /*
+      In the original, photos + "Save the date" occupy ~62% of page height ≈ 130mm
+      Starting from y≈14mm (just below greeting)
+    */
+    .photos-block {
+      position: absolute;
+      top: 16mm;
+      left: 0;
+      right: 0;
+      height: 122mm;
+    }
+
+    /* "Save the date" — overlaps top of polaroids */
+    .save-the-date {
+      position: absolute;
+      top: 10mm;
+      right: 22mm;
+      font-family: 'Caveat';
+      font-size: 18.5mm;
+      color: #c2172b;
+      transform: rotate(-11deg);
+      transform-origin: right top;
+      z-index: 10;
+      white-space: nowrap;
+      line-height: 1;
+      filter: drop-shadow(0 1px 2.5px rgba(0,0,0,0.12));
+      font-weight: 600;
+      letter-spacing: -1.1mm;
+    }
+
+    /* Polaroid pair — anchored from top (not bottom) */
+    .polaroids {
+      position: absolute;
+      top: 30mm;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: flex-start;
+      gap: 5mm;
+    }
+
+    .qr-code img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      height: 85mm;
+      object-position: left;
+    }
+
+    .polaroid {
+      background: #fff;
+      padding: 2.8mm 2.8mm 0 2.8mm;
+      box-shadow: 2px 4px 10px rgba(0,0,0,0.22), 0 1px 3px rgba(0,0,0,0.10);
+      flex-shrink: 0;
+    }
+
+    .polaroid-left {
+      width: 57mm;
+      transform: rotate(-5deg);
+      z-index: 6;
+    }
+
+    /* right polaroid slightly lower and tilted */
+    .polaroid-right {
+      width: 57mm;
+      transform: rotate(4deg) translateY(6mm);
+      z-index: 5;
+    }
+
+    .polaroid img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      object-position: center 12%;
+    }
+
+    .polaroid-left img  { height: 76mm;       object-position: left;}
+    .polaroid-right img { height: 76mm; }
+
+    /* white area below photo inside polaroid */
+    .polaroid-caption-area {
+      height: 10mm;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1mm;
+    }
+
+    .polaroid-caption {
+      font-family: 'Caveat', cursive;
+      font-size: 6mm;
+      font-weight: 700;
+      color: #1a1a1a;
+      text-align: center;
+      line-height: 1.2;
+      font-style: italic;
+    }
+
+    /* ─── MONTH NAME ────────────────────────────────────── */
+    .month-name {
+      position: absolute;
+      top: 139mm;
+      left: 0;
+      right: 43mm;
+      text-align: center;
+      font-family: 'Caveat';
+      font-size: 18mm;
+      color: #c2172b;
+      line-height: 1.35;
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.08));
+      transform: rotate(347deg);
+      letter-spacing: -1.1mm;
+    }
+
+    /* ─── CALENDAR ──────────────────────────────────────── */
+    .calendar {
+      position: absolute;
+      top: 159mm;
+      left: 7%;
+      right: 7%;
+    }
+
+    .cal-header {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      border-top: 0.45mm solid #2a2a2a;
+      border-bottom: 0.45mm solid #2a2a2a;
+      padding: 1.3mm 0;
+    }
+
+    .cal-header span {
+      display: block;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.9mm;
+      font-weight: 500;
+      color: #1a1a1a;
+      letter-spacing: 0.05mm;
+      -webkit-text-fill-color: #1a1a1a;
+    }
+
+    .cal-row {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      margin-top: 2mm;
+      align-items: center;
+    }
+
+    .cal-row .dn {
+      display: block;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.3mm;
+      font-weight: 400;
+      color: #1a1a1a;
+      -webkit-text-fill-color: #1a1a1a;
+    }
+
+    /* Red heart highlight */
+    .day-heart {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .day-heart svg {
+      width: 9mm;
+      height: 8.5mm;
+      fill: #c2172b;
+      display: block;
+      transform: scale(1.4) rotate(360deg);
+    }
+
+    .day-heart .hn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      -webkit-text-fill-color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.3mm;
+      font-weight: 700;
+      line-height: 1;
+      margin-top: -0.3mm;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    .footer {
+      position: absolute;
+      bottom: 14mm;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4.1mm;
+      font-weight: 400;
+      color: #1a1a1a;
+      -webkit-text-fill-color: #1a1a1a;
+      letter-spacing: 0.08mm;
+    }
+  </style>
+</head>
+<body>
+<div class="page main-page">
+  <div class="content">
+
+    <!-- Greeting -->
+    <p class="greeting"><strong class="people-greeting">Привет!</strong><span> Совсем скоро наша свадьба</span></p>
+
+    <!-- Photos block -->
+    <div class="photos-block">
+
+      <!-- Red cursive "Save the date" -->
+      <div class="save-the-date">Save the date</div>
+
+      <!-- Polaroids -->
+      <div class="polaroids">
+
+        <!-- Влад — left, larger, tilted left -->
+        <div class="polaroid polaroid-left">
+          <img src="v22.jpg" alt="Влад">
+          <div class="polaroid-caption-area">
+            <span class="polaroid-caption">кто будет моей женой?</span>
+          </div>
+        </div>
+
+        <!-- Маша — right, smaller, tilted right -->
+        <div class="polaroid polaroid-right">
+          <img src="m2.jpg" alt="Маша" style="transform: scaleX(-1);">
+          <div class="polaroid-caption-area">
+            <span class="polaroid-caption">я буду!</span>
+          </div>
+        </div>
+
+      </div><!-- .polaroids -->
+    </div><!-- .photos-block -->
+
+    <!-- Month name -->
+    <div class="month-name">Июль</div>
+
+    <!-- Calendar
+         July 2026: July 1 = Wednesday (ср)
+         The Mon–Sun week containing July 5 (Sunday):
+         Jun 29 (пн), Jun 30 (вт), Jul 1 (ср), Jul 2 (чт), Jul 3 (пт), Jul 4 (сб), Jul 5 (вс) ♥
+    -->
+    <div class="calendar">
+      <div class="cal-header">
+        <span>пн</span><span>вт</span><span>ср</span><span>чт</span><span>пт</span><span>сб</span><span>вс</span>
+      </div>
+      <div class="cal-row">
+        <span class="dn">29</span>
+        <span class="dn">30</span>
+        <span class="dn">1</span>
+        <span class="dn">2</span>
+        <span class="dn">3</span>
+        <span class="dn">4</span>
+        <span class="dn">
+          <div class="day-heart">
+            <svg viewBox="0 0 100 92" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 86C50 86 6 56 6 30C6 15.5 17 6 30 6C39 6 46.5 11 50 19C53.5 11 61 6 70 6C83 6 94 15.5 94 30C94 56 50 86 50 86Z"/>
+            </svg>
+            <span class="hn">5</span>
+          </div>
+        </span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <p class="footer">Подробности на обратной стороне</p>
+
+  </div>
+</div>
+<div class="page qr-page">
+  <div class="content">
+    <div class="qr-code">
+      <img class="qr-link" src="qr2.png">
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
+<script>
+  const guests = [{
+    "name": "Дорогие Оксана и Яков",//0
+    "qrLink": "oksana-yakov.png",
+    "uuid": "66ffc662-f770-4b53-aa4c-65a6b699b44f"
+  }, {
+    "name": "Дорогая Мария",//0
+    "qrLink": "maryia.png",
+    "uuid": "509ebd0e-e2ea-42c7-a8d0-93740c3bee3c"
+  }, {
+    "name": "Дорогие Елена и Евгений",//2
+    "qrLink": "elena-yugen.png",
+    "uuid": "4c532d5d-981c-424c-968f-cdd017a305b8"
+  }, {
+    "name": "Дорогая Евгения Максимовна",//2
+    "qrLink": "yugen-maksim.png",
+    "uuid": "1d117f59-ce9c-431b-ae98-a83c6eeb5cb7"
+  }, {
+    "name": "Дорогая Ольга Яковлевна",//4
+    "qrLink": "olga-yakov.png",
+    "uuid": "4b721a96-d158-4883-b1ca-0cd280e7456b"
+  }, {
+    "name": "Дорогие Екатерина Андреевна и Владимир Владимирович",//4
+    "qrLink": "ekad-vladimir.png",
+    "uuid": "7dd7709b-7425-4cb9-ab1d-9150eb2e6aa0"
+  }, {
+    "name": "Дорогие Татьяна и Эдуард",//6
+    "qrLink": "eduard-tatiana.png",
+    "uuid": "52e23328-9597-4b34-a69b-1128d9d5ccfc"
+  }, {
+    "name": "Дорогие Катя и Никита",//6
+    "qrLink": "nikita-kate.png",
+    "uuid": "b43cab6c-ae2a-47ab-bca5-74076d7da706"
+  }, {
+    "name": "Дорогие Марина, Сергей, Лиза, Вова и Саша",//8
+    "qrLink": "skomor.png",
+    "uuid": "abfbb209-7ad1-4656-9aa6-b8b9bb36169f"
+  }, {
+    "name": "Дорогой Тима",//8
+    "qrLink": "tima.png",
+    "uuid": "6d339eb1-80ad-422a-af97-c8b6aaf419fb"
+  }, {
+    "name": "Дорогие Николай и Ольга",//10
+    "qrLink": "nikolai-olga.png",
+    "uuid": "1e28cb2c-0fd5-40a6-a3f3-f3631305aa22"
+  }, {
+    "name": "Дорогие Алеся и Андрей",//10
+    "qrLink": "ales-andrei.png",
+    "uuid": "efd022fe-c7a0-4fce-97b3-8a07ecbef014"
+  }, {
+    "name": "Дорогая Арина",//12
+    "qrLink": "arina.png",
+    "uuid": "fbd5c1f3-950c-434f-8a10-301c1d22481f"
+  }, {
+    "name": "Дорогой Иван",//12
+    "qrLink": "ivan.png",
+    "uuid": "6823c70c-164e-434d-b168-1e1dbf74b820"
+  },
+    {
+      "name": "Дорогие Мария, Лолита и Марк", //14
+      "qrLink": "mary-lola.png",
+      "uuid": "c2c550e5-8616-4634-af7f-a0223b710b92"
+    },
+    {
+      "name": "Дорогие Невеста и Жених", //14
+      "qrLink": "we.png",
+      "uuid": "bcde8aa5-7164-4de7-8293-7634dd76b69d"
+    },{
+      "name": "Дорогие Гости", //16
+      "qrLink": "shared.png",
+      "uuid": "3b9f8c3f-0a28-4120-8d40-bd201e0c0508"
+    }
+  ]
+
+  const pair = 0;  //2 //4
+  const isMain = true
+
+  const changeName = (position, isSecond) => {
+    const element = guests[isSecond ? (position + 1) : position]
+    const peopleGreeting = document.getElementsByClassName("people-greeting")[isSecond ? 1 : 0];
+    peopleGreeting.innerText = element.name;
+  }
+
+  const changeQr = (position, isSecond) => {
+    const element = guests[isSecond ? (position + 1) : position]
+    const qrLink = document.getElementsByClassName("qr-link")[isSecond ? 1 : 0];
+    qrLink.src = element.qrLink;
+  }
+
+  const duplicate = (className) => {
+    document.body.appendChild(document.getElementsByClassName(className)[0].cloneNode(true))
+  }
+
+  if (isMain) {
+    // duplicate("main-page")
+    document.getElementsByClassName("qr-page")[0].style.display = 'none'
+
+    changeName(pair)
+    // changeName(pair, true)
+  } else {
+    // duplicate("qr-page")
+    document.getElementsByClassName("main-page")[0].style.display = 'none'
+
+    changeQr(pair)
+    // changeQr(pair, true)
+  }
+
+
+</script>
