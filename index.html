@@ -16220,7 +16220,7 @@
                      data-animate-sbs-trgofst-res-320="0"
                      data-animate-sbs-opts-res-320="[{'mx':0,'my':0,'sx':1,'sy':1,'op':1,'ro':0,'ti':0,'ea':'0','dt':0},{'mx':0,'my':0,'sx':0.9,'sy':0.9,'op':0,'ro':0,'ti':0,'ea':'easeIn','dt':0},{'mx':0,'my':0,'sx':1,'sy':1,'op':1,'ro':0,'ti':1700,'ea':'easeOut','dt':0}]"
                      data-field-fontsize-res-320-value="14" data-field-left-res-640-value="160">
-                    <div class='tn-atom' field='tn_text_176315302074257050'>Приглашаем вас стать частью<br>нашей
+                    <div class='tn-atom' field='tn_text_176315302074257050' id="greeting-2">Приглашаем вас стать частью<br>нашей
                         свадьбы!
                     </div>
                 </div>
@@ -16284,7 +16284,7 @@
                      data-animate-sbs-trgofst-res-320="0"
                      data-animate-sbs-opts-res-320="[{'mx':0,'my':0,'sx':1,'sy':1,'op':1,'ro':0,'ti':0,'ea':'0','dt':0},{'mx':0,'my':0,'sx':0.9,'sy':0.9,'op':0,'ro':0,'ti':0,'ea':'easeIn','dt':0},{'mx':0,'my':0,'sx':1,'sy':1,'op':1,'ro':0,'ti':1700,'ea':'easeOut','dt':0}]"
                      data-field-fontsize-res-320-value="14" data-field-left-res-640-value="121">
-                    <div class='tn-atom' field='tn_text_176297093649684070'>Мы хотим разделить с вами один из самых<br>важных
+                    <div class='tn-atom' field='tn_text_176297093649684070' id="greeting-1">Мы хотим разделить с вами один из самых<br>важных
                         и радостных дней в нашей жизни -<br>праздник настоящей любви.
                     </div>
                 </div>
@@ -20130,6 +20130,11 @@
             "uuid": "bcde8aa5-7164-4de7-8293-7634dd76b69d"
         },
         {
+            "name": "Дорогая Ульяна",
+            "qrLink": "shared.png",
+            "uuid": "8a4119c4-108c-4a20-9484-31cd44bb70dd"
+        },
+        {
             "name": "Дорогие Гости",
             "qrLink": "shared.png",
             "uuid": "3b9f8c3f-0a28-4120-8d40-bd201e0c0508"
@@ -20141,6 +20146,13 @@
     const guestDetails = guests.find(it => it.uuid === guestId);
     if (guestDetails) {
         guestElement.innerText = guestDetails.name + "!"
+
+        if (["6d339eb1-80ad-422a-af97-c8b6aaf419fb", "fbd5c1f3-950c-434f-8a10-301c1d22481f", "8a4119c4-108c-4a20-9484-31cd44bb70dd"].includes(guestDetails.uuid)) {
+            const guestElement1 = document.getElementById("greeting-1");
+            guestElement1.innerHTML = guestElement1.innerHTML.replace("вами", "тобой");
+            const guestElement2 = document.getElementById("greeting-2");
+            guestElement2.innerHTML = guestElement2.innerHTML.replace("вас", "тебя");
+        }
     }
 </script>
 </html>
